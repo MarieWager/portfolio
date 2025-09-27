@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+/* Typography */
+
+h1 {
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--h1);
+  color: var(--midnightblue);
+}
+h2 {
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--h2);
+  color: var(--midnightblue);
+}
+h3 {
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--h3);
+  color: var(--midnightblue);
+}
+h4 {
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--h4);
+  color: var(--midnightblue);
+}
+h5 {
+  font-family: "Press Start 2P", system-ui;
+  font-size: var(--h5);
+  color: var(--midnightblue);
+}
+p {
+  font-family: "Alata", sans-serif;
+  color: var(--midnightblue);
+}
+ul,
+li {
+  font-family: "Alata", sans-serif;
+  list-style: none;
+  color: var(--midnightblue);
+}
+li:hover {
+  color: var(--oldlace);
+}
+
+:root {
+  /* Color */
+  --gray: #fffefc;
+  --mediumpurple: #b183e6;
+  --midnightblue: #3d166a;
+  --oldlace: #fff5e7;
+  --palevioletred: #e072ad;
+  --papayawhip: #ffedd5;
+  --sandybrown: #ffb657;
+  --snow: #fefbfd;
+
+  /* BorderRadius */
+  --br-20: 20px;
+  --br-30: 30px;
+
+  /* FontSize */ /* make responsive to accom bigger screens - use clamp */
+  --h1: 2rem;
+  --h2: 1.5rem;
+  --h3: 1rem;
+  --h4: 0.5rem;
+  --h5: 0.2rem;
+
+  /* Borders */
+  --border-1: 2px solid var(--color-midnightblue);
+
+  /* Shadows */
+  --shadow-drop: 0px 7px 0px -2px var(--color-midnightblue);
+
+  /* WidthHeights */
+  --height-32: 32px;
+  --width-36: 36px;
+  --width-1232: 1232px;
+
+  /* LineHeights */
+  --lh-20: 20px;
+  --lh-21: 21px;
+  --lh-28: 28px;
+  --lh-39: 39px;
+
+  /* LetterSpacings */
+  --ls-0_01: 0.01;
+  --ls-0_09: 0.09;
+  --ls-0_3: 0.3;
+}
