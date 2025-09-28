@@ -1,9 +1,20 @@
 ---
-
+const { img, desc } = Astro.props;
 ---
+
+<article>
+  <section>
+    <div></div><div></div>
+  </section>
+  <img src={img} alt={desc} />
+  <video src={img}></video>
+</article>
 
 <style>
   /** mobile **/
+  img {
+    max-width: 300px;
+  }
 
   /** desktop **/
 
