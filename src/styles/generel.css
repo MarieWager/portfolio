@@ -1,6 +1,8 @@
 body {
   margin: 0;
+  padding: 2rem;
   line-height: normal;
+  background-color: var(--oldlace);
 }
 
 /* Typography */
@@ -29,19 +31,25 @@ h5 {
   font-family: "Press Start 2P", system-ui;
   font-size: var(--h5);
   color: var(--midnightblue);
+  letter-spacing: 5px;
 }
 p {
   font-family: "Alata", sans-serif;
   color: var(--midnightblue);
 }
 ul,
-li {
+li,
+a {
   font-family: "Alata", sans-serif;
   list-style: none;
   color: var(--midnightblue);
+  text-decoration: none;
 }
 li:hover {
   color: var(--oldlace);
+}
+a:hover {
+  color: var(--palevioletred);
 }
 
 :root {
@@ -62,29 +70,13 @@ li:hover {
   /* FontSize */ /* make responsive to accom bigger screens - use clamp */
   --h1: 2rem;
   --h2: 1.5rem;
-  --h3: 1rem;
+  --h3: 1.3rem;
   --h4: 0.5rem;
-  --h5: 0.2rem;
+  --h5: 0.5rem;
 
   /* Borders */
-  --border-1: 2px solid var(--color-midnightblue);
+  --border-1: solid 2px var(--midnightblue);
 
   /* Shadows */
-  --shadow-drop: 0px 7px 0px -2px var(--color-midnightblue);
-
-  /* WidthHeights */
-  --height-32: 32px;
-  --width-36: 36px;
-  --width-1232: 1232px;
-
-  /* LineHeights */
-  --lh-20: 20px;
-  --lh-21: 21px;
-  --lh-28: 28px;
-  --lh-39: 39px;
-
-  /* LetterSpacings */
-  --ls-0_01: 0.01;
-  --ls-0_09: 0.09;
-  --ls-0_3: 0.3;
+  --shadow-drop: 0px 7px 0px -2px var(--midnightblue);
 }

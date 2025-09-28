@@ -1,0 +1,43 @@
+---
+const { sted, variant, link, kontakt } = Astro.props;
+---
+
+<article class={variant}>
+  <h5>{sted}</h5>
+
+  <a href=`${link}` aria-label=`Går til ${sted}`><h3>{kontakt}</h3></a>
+</article>
+
+<style>
+  h5,
+  h3 {
+    margin: 0;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 20px;
+    border-radius: 20px;
+    border: var(--border-1);
+    box-shadow: var(--shadow-drop);
+  }
+
+  a {
+    display: block;
+    text-align: right;
+    cursor: pointer;
+  }
+  .gul {
+    background-color: var(--sandybrown);
+  }
+
+  .rosa {
+    background-color: var(--palevioletred);
+  }
+
+  .lilla {
+    background-color: var(--mediumpurple);
+  }
+</style>
