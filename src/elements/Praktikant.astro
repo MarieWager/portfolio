@@ -8,37 +8,30 @@ import DescCard from "../components/DescCard.astro";
 
 <article>
   <h1>Jeres nye praktikant?</h1>
-
-  <div class="bento">
-    <div class="box">
-      <KontaktInfoCard sted="Name" variant="gul" kontakt="Marie Jensen" />
-      <img class="mobile" src="public/media/Gif_snow.gif" alt="" />
+  <div class="wrap">
+    <div class="bento">
+      <div class="box">
+        <KontaktInfoCard sted="Name" variant="gul" kontakt="Marie Jensen" />
+        <img class="mobile" src="public/media/Gif_snow.gif" alt="" />
+      </div>
+      <ProfilCard />
+      <div class="mobile">
+        <DescCard />
+      </div>
     </div>
-    <ProfilCard />
-    <div class="mobile">
-      <DescCard />
-    </div>
-  </div>
-  <img class="desk" src="public/media/Gif_snow.gif" alt="" />
+    <img class="desk" src="public/media/Gif_snow.gif" alt="" />
 
-  <div class="bento">
-    <KompetanceCard />
+    <div class="bento">
+      <KompetanceCard />
 
-    <div class="desk">
-      <DescCard />
+      <div class="desk">
+        <DescCard />
+      </div>
     </div>
   </div>
 
   <style>
     /* GIF */
-    img {
-      background-color: var(--snow);
-      border-radius: 20px;
-      border: var(--border-1);
-      box-shadow: var(--shadow-drop);
-
-      width: 90px;
-    }
 
     /** mobile **/
     .desk {
@@ -47,6 +40,15 @@ import DescCard from "../components/DescCard.astro";
     .mobile {
       display: block;
     }
+
+    img.mobile {
+      background-color: var(--snow);
+      border-radius: 20px;
+      border: var(--border-1);
+      box-shadow: var(--shadow-drop);
+
+      width: 90px;
+    }
     article {
       display: grid;
       grid-template-columns: 1fr;
@@ -54,12 +56,18 @@ import DescCard from "../components/DescCard.astro";
     h1 {
       justify-self: center;
     }
-
     .box {
       display: grid;
       grid-template-columns: 9fr 1fr;
       gap: 1rem;
       width: 100%;
+    }
+
+    .wrap,
+    .bento {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     @media (min-width: 860px) {
@@ -70,9 +78,24 @@ import DescCard from "../components/DescCard.astro";
       .desk {
         display: block;
       }
-      article {
+
+      img.desk {
+        background-color: var(--snow);
+        border-radius: 20px;
+        border: var(--border-1);
+        box-shadow: var(--shadow-drop);
+        padding-top: 5vh;
+        width: 90px;
+
+        width: clamp(160px, 100%, 380px);
+      }
+
+      .box {
+        display: unset;
+      }
+      .wrap {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
       }
     }
   </style>
