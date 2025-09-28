@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 2rem;
+  padding: 5vw;
   line-height: normal;
   background-color: var(--oldlace);
 }
@@ -68,7 +68,7 @@ a:hover {
   --br-30: 30px;
 
   /* FontSize */ /* make responsive to accom bigger screens - use clamp */
-  --h1: 2rem;
+  --h1: 3rem;
   --h2: 1.5rem;
   --h3: 1.3rem;
   --h4: 0.5rem;

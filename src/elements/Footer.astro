@@ -4,70 +4,104 @@ import FooterImgCard from "../components/FooterImgCard.astro";
 ---
 
 <article>
-  <h1>Kontakt mig her</h1>
+  <h1 class="over">Kontakt mig her</h1>
+
   <div class="sbs">
+    <h1 class="under">Kontakt mig her</h1>
+
+    <img src="/media/image_me.png" alt="" />
+
     <div class="kontakt">
       <KontaktInfoCard sted="Email" variant="gul" link="mailto:mariewpj@gmail.com" kontakt="Mariewpj@gmail.com" />
       <KontaktInfoCard sted="Telefonnummer" variant="rosa" link="tel:+4529176648" kontakt="29 17 66 48" />
       <KontaktInfoCard sted="LinkedIn" variant="lilla" link="https://www.linkedin.com/in/marie-jensen-031603222/" kontakt="in/marie-jensen-031603222/" />
     </div>
-    <img src="/media/image_me.png" alt="" />
   </div>
 </article>
 
 <style>
-  img {
-    border-radius: 20px;
-    border: var(--border-1);
-    box-shadow: var(--shadow-drop);
+  /** Mobile **/
+  article {
+    margin-bottom: 1rem;
   }
+
   .sbs {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    gap: 5rem;
-
+    grid-template-columns: 2fr 1fr;
     padding: 5%;
+    border-radius: none;
+    border: none;
+    box-shadow: none;
+
+    gap: 1rem;
+  }
+
+  .over {
+    display: none;
+  }
+  .under {
+    display: block;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  img {
+    grid-area: 1 / 2 / 2 / 3;
     border-radius: 20px;
     border: var(--border-1);
     box-shadow: var(--shadow-drop);
 
-    overflow-block: hidden;
-
-    width: fit-content;
+    width: clamp(160px, 27vw, 300px);
   }
 
   .kontakt {
+    grid-area: 2 / 1 / 5 / 3;
     display: grid;
-    gap: 3rem;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    height: 100px;
   }
 
-  @media (max-width: 900px) {
-    .sbs {
+  /** Desktop **/
+  @media (min-width: 860px) {
+    article {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+
+      justify-content: center;
+    }
+    .under {
+      display: none;
+    }
+    .over {
+      grid-area: 1 / 1 / 2 / 2;
+      display: block;
+      justify-self: center;
+    }
+
+    .sbs {
+      grid-area: 2 / 1 / 5 / 2;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
       grid-column-gap: 0px;
       grid-row-gap: 0px;
-      gap: 5rem;
+      gap: 3rem;
 
-      padding: 5%;
+      padding: clamp(50px, 5vw, 100px);
+
       border-radius: 20px;
       border: var(--border-1);
       box-shadow: var(--shadow-drop);
-
-      overflow-block: hidden;
-
-      width: fit-content;
     }
 
-    .sbs.img {
-      display: none;
+    img {
+      grid-area: 1 / 1 / 2 / 2;
+      width: clamp(160px, 35vw, 300px);
     }
-
     .kontakt {
-      display: grid;
-      gap: 3rem;
+      grid-area: 1 / 2 / 2 / 3;
     }
   }
 </style>
