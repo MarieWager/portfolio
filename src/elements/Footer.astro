@@ -1,6 +1,5 @@
 ---
 import KontaktInfoCard from "../components/KontaktInfoCard.astro";
-import FooterImgCard from "../components/FooterImgCard.astro";
 ---
 
 <article>
@@ -28,11 +27,6 @@ import FooterImgCard from "../components/FooterImgCard.astro";
   .sbs {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding: 5%;
-    border-radius: none;
-    border: none;
-    box-shadow: none;
-
     gap: 1rem;
   }
 
@@ -83,7 +77,7 @@ import FooterImgCard from "../components/FooterImgCard.astro";
       grid-area: 2 / 1 / 5 / 2;
 
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 4fr;
       grid-template-rows: 1fr;
       grid-column-gap: 0px;
       grid-row-gap: 0px;

@@ -20,7 +20,10 @@ const { title, meta } = Astro.props;
   </head>
   <body>
     <Menu elem1="Praktikanten" elem2="Projekter" elem3="Kontakt" />
+    <div id="space"></div>
     <slot />
+    <div id="space"></div>
+
     <Footer />
   </body>
 </html>
@@ -35,5 +38,9 @@ const { title, meta } = Astro.props;
   }
   * {
     box-sizing: border-box;
+  }
+
+  #space {
+    padding: 2rem;
   }
 </style>
