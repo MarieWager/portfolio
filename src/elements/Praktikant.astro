@@ -1,12 +1,79 @@
 ---
-
+import KontaktInfoCard from "../components/KontaktInfoCard.astro";
+import ProfilCard from "../components/ProfilCard.astro";
+import GifCard from "../components/GifCard.astro";
+import KompetanceCard from "../components/KompetanceCard.astro";
+import DescCard from "../components/DescCard.astro";
 ---
 
-<style>
-  /** mobile **/
+<article>
+  <h1>Jeres nye praktikant?</h1>
 
-  /** desktop **/
+  <div class="bento">
+    <div class="box">
+      <KontaktInfoCard sted="Name" variant="gul" kontakt="Marie Jensen" />
+      <img class="mobile" src="public/media/Gif_snow.gif" alt="" />
+    </div>
+    <ProfilCard />
+    <div class="mobile">
+      <DescCard />
+    </div>
+  </div>
+  <img class="desk" src="public/media/Gif_snow.gif" alt="" />
 
-  @media (min-width: 860px) {
-  }
-</style>
+  <div class="bento">
+    <KompetanceCard />
+
+    <div class="desk">
+      <DescCard />
+    </div>
+  </div>
+
+  <style>
+    /* GIF */
+    img {
+      background-color: var(--snow);
+      border-radius: 20px;
+      border: var(--border-1);
+      box-shadow: var(--shadow-drop);
+
+      width: 90px;
+    }
+
+    /** mobile **/
+    .desk {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+    article {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    h1 {
+      justify-self: center;
+    }
+
+    .box {
+      display: grid;
+      grid-template-columns: 9fr 1fr;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    @media (min-width: 860px) {
+      /** desktop **/
+      .mobile {
+        display: none;
+      }
+      .desk {
+        display: block;
+      }
+      article {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+    }
+  </style>
+</article>

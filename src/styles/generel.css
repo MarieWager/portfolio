@@ -11,6 +11,9 @@ h1 {
   font-family: "League Spartan", sans-serif;
   font-size: var(--h1);
   color: var(--midnightblue);
+  margin: 0;
+  padding: 0;
+  margin-top: 4rem;
 }
 h2 {
   font-family: "League Spartan", sans-serif;
@@ -32,6 +35,7 @@ h5 {
   font-size: var(--h5);
   color: var(--midnightblue);
   letter-spacing: 5px;
+  margin: 0;
 }
 p {
   font-family: "Alata", sans-serif;
@@ -45,9 +49,7 @@ a {
   color: var(--midnightblue);
   text-decoration: none;
 }
-li:hover {
-  color: var(--oldlace);
-}
+
 a:hover {
   color: var(--palevioletred);
 }
