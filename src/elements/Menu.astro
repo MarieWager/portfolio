@@ -8,10 +8,10 @@ const { elem1, elem2, elem3 } = Astro.props;
       <img src="/media/search_icon.svg" alt="" />
     </div>
     <nav class="nav">
-      <ul class="menu">
-        <li><h2><a href=`#${elem1}` aria-label=`Go to ${elem1}`>{elem1}</a></h2></li>
-        <li><h2><a href=`#${elem2}` aria-label=`Go to ${elem2}`>{elem2}</a></h2></li>
-        <li><h2><a href=`#${elem3}` aria-label=`Go to ${elem3}`>{elem3}</a></h2></li>
+      <ul>
+        <li><a href=`#${elem1}` aria-label=`Go to ${elem1}`>{elem1}</a></li>
+        <li><a href=`#${elem2}` aria-label=`Go to ${elem2}`>{elem2}</a></li>
+        <li><a href=`#${elem3}` aria-label=`Go to ${elem3}`>{elem3}</a></li>
       </ul>
     </nav>
   </div>
@@ -47,37 +47,44 @@ const { elem1, elem2, elem3 } = Astro.props;
     right: 0;
     margin: 5vw 5vw 0 5vw;
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    height: 122px;
+    grid-template-columns: 1fr 5fr;
+    max-height: 45wv;
   }
 
   .search_icon {
-    background-color: var(--mediumpurple);
+    background-color: var(--lightpurple);
     border-radius: 18px 0px 0px 18px;
     border-right: var(--border-1);
     display: grid;
     align-content: center;
     justify-content: center;
-    width: clamp(50px, 15vw, 100px);
+    width: clamp(50px, 15vw, 75px);
+    height: 75px;
   }
 
-  ul {
-    margin: 0.5rem;
+  nav {
+    align-self: center;
+    ul {
+      font-size: var(--h3);
+      padding: 0;
+      display: flex;
+      justify-content: space-evenly;
+    }
   }
 
   /** desktop **/
 
   @media (min-width: 860px) {
     .search_bar {
-      grid-template-columns: 1fr 6fr;
+      grid-template-columns: 1fr 14fr;
     }
     .nav {
-      place-content: center;
-    }
-    ul {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      align-content: center;
+      padding-right: 8vw;
+
+      ul {
+        font-size: var(--h2);
+        align-content: center;
+      }
     }
   }
 </style>

@@ -14,39 +14,39 @@
 
   article {
     display: grid;
-    grid-template-columns: 9fr 1fr;
+    grid-template-columns: 1fr auto;
     gap: 1rem;
 
     padding: 20px;
     border-radius: 20px;
-    border: var(--border-1);
     box-shadow: var(--shadow-drop);
-    background-color: var(--palevioletred);
+    background-color: var(--lightpurple);
     align-content: center;
     justify-content: center;
-  }
 
-  h5 {
-    align-self: center;
-  }
-  .cirkel {
-    display: grid;
-    background-color: var(--oldlace);
-    border-radius: 40px;
-    border: var(--border-1);
-    width: 20px;
-    height: 20px;
-    align-content: center;
-    justify-content: center;
-  }
+    h5 {
+      align-self: center;
+    }
 
-  .filled {
-    border: var(--border-1);
-    background-color: var(--sandybrown);
-    border-radius: 40px;
+    .cirkel {
+      display: grid;
+      background-color: var(--oldlace);
+      border-radius: 40px;
+      border: var(--border-1);
+      width: 20px;
+      height: 20px;
+      align-content: center;
+      justify-content: center;
 
-    width: 10px;
-    height: 10px;
+      .filled {
+        border: var(--border-1);
+        background-color: var(--sandybrown);
+        border-radius: 40px;
+
+        width: 10px;
+        height: 10px;
+      }
+    }
   }
 
   /** desktop **/

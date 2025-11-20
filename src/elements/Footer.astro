@@ -3,7 +3,7 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
 ---
 
 <article>
-  <h1 class="over">Kontakt mig her</h1>
+  <div id="space"><h1 class="over">Kontakt mig her</h1></div>
 
   <div class="sbs">
     <h1 class="under">Kontakt mig her</h1>
@@ -12,7 +12,7 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
 
     <div class="kontakt">
       <KontaktInfoCard sted="Email" variant="gul" link="mailto:mariewpj@gmail.com" kontakt="Mariewpj@gmail.com" />
-      <KontaktInfoCard sted="Telefonnummer" variant="rosa" link="tel:+4529176648" kontakt="29 17 66 48" />
+      <KontaktInfoCard sted="Telefonnummer" variant="lys" link="tel:+4529176648" kontakt="29 17 66 48" />
       <KontaktInfoCard sted="LinkedIn" variant="lilla" link="https://www.linkedin.com/in/marie-jensen-031603222/" kontakt="in/marie-jensen-031603222/" />
     </div>
   </div>
@@ -20,27 +20,28 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
 
 <style>
   /** Mobile **/
-  article {
-    margin-bottom: 1rem;
-  }
-
   .sbs {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 1rem;
+
+    margin-bottom: 1rem;
   }
 
   .over {
     display: none;
   }
   .under {
-    display: block;
+    display: flex;
     grid-area: 1 / 1 / 2 / 2;
+    align-content: flex-end;
+    flex-wrap: wrap;
   }
 
   img {
     grid-area: 1 / 2 / 2 / 3;
-    border-radius: 20px;
+    border-radius: var(--br-12);
     border: var(--border-1);
     box-shadow: var(--shadow-drop);
 
@@ -53,6 +54,10 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
     grid-template-rows: repeat(3, 1fr);
     gap: 1rem;
     height: 100px;
+    @media (min-width: 860px) {
+      grid-area: 1 / 2 / 2 / 3;
+      gap: 2rem;
+    }
   }
 
   /** Desktop **/
@@ -83,19 +88,12 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
       grid-row-gap: 0px;
       gap: 3rem;
 
-      padding: clamp(50px, 5vw, 100px);
-
-      border-radius: 20px;
-      border: var(--border-1);
-      box-shadow: var(--shadow-drop);
+      margin-bottom: 5vw;
     }
 
     img {
       grid-area: 1 / 1 / 2 / 2;
       width: clamp(160px, 35vw, 300px);
-    }
-    .kontakt {
-      grid-area: 1 / 2 / 2 / 3;
     }
   }
 </style>

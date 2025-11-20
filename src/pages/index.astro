@@ -2,15 +2,21 @@
 import Layout from "../layouts/Layout.astro";
 import Praktikant from "../elements/Praktikant.astro";
 import Projekt from "../elements/Projekt.astro";
+import Footer from "../elements/Footer.astro";
 ---
 
 <Layout title="Marie Jensen" meta="Velkommen til mit digitale portfolio">
   <section id="Praktikanten">
+    <div id="space"></div>
     <Praktikant />
   </section>
   <div id="space"></div>
   <section id="Projekter">
     <Projekt />
+  </section>
+  <section id="Kontakt">
+    <div id="space"></div>
+    <Footer />
   </section>
 </Layout>
 

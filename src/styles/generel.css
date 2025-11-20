@@ -5,6 +5,37 @@ body {
   background-color: var(--oldlace);
 }
 
+:root {
+  /* Color */
+  /*--gray: #fffefc;*/
+  --lightpurple: #b183e6;
+  --mediumpurple: #8F4CDA;
+  --midnightblue: #3d166a;
+  --oldlace: #fff5e7;
+  --papayawhip: #ffedd5;
+  --sandybrown: #ffb657;
+  --snow: #FCFAFE;
+
+  /* BorderRadius */
+  
+  --br-12:12px 12px 0 0;
+
+  /* FontSize */ /* make responsive to accom bigger screens - use clamp */
+  --h1: 3rem;
+  --h2: 1.5rem;
+  --h3: 1.3rem;
+  --h4: 0.5rem;
+  --h5: 0.5rem;
+
+  /* Borders */
+  --border-1: solid 2px var(--midnightblue);
+  border-inline-color: solid 2px var(--midnightblue);
+
+  /* Shadows */
+  --shadow-drop: 7px 10px 0px  #3d166a40; /*0px 7px 0px -2px var(--midnightblue)*/;
+}
+
+
 /* Typography */
 
 h1 {
@@ -13,7 +44,7 @@ h1 {
   color: var(--midnightblue);
   margin: 0;
   padding: 0;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 h2 {
   font-family: "League Spartan", sans-serif;
@@ -38,47 +69,38 @@ h5 {
   margin: 0;
 }
 p {
-  font-family: "Alata", sans-serif;
+  font-family: "League Spartan", sans-serif;
+  line-height: 15px;
   color: var(--midnightblue);
+  min-width: 25ch;
 }
 ul,
 li,
 a {
-  font-family: "Alata", sans-serif;
+  font-family: "League Spartan", sans-serif;
   list-style: none;
   color: var(--midnightblue);
   text-decoration: none;
+  line-height: 15px;
 }
 
 a:hover {
-  color: var(--palevioletred);
+  color: var(--sandybrown);
 }
 
-:root {
-  /* Color */
-  --gray: #fffefc;
-  --mediumpurple: #b183e6;
-  --midnightblue: #3d166a;
-  --oldlace: #fff5e7;
-  --palevioletred: #e072ad;
-  --papayawhip: #ffedd5;
-  --sandybrown: #ffb657;
-  --snow: #fefbfd;
-
-  /* BorderRadius */
-  --br-20: 20px;
-  --br-30: 30px;
-
-  /* FontSize */ /* make responsive to accom bigger screens - use clamp */
-  --h1: 3rem;
-  --h2: 1.5rem;
-  --h3: 1.3rem;
-  --h4: 0.5rem;
-  --h5: 0.5rem;
-
-  /* Borders */
-  --border-1: solid 2px var(--midnightblue);
-
-  /* Shadows */
-  --shadow-drop: 0px 7px 0px -2px var(--midnightblue);
+figure{
+  margin: 0;
+  
+  figcaption {
+  margin: 0;
+  padding: 0;
 }
+}
+
+#space {
+  padding: 3rem 0 1rem;
+  @media (min-width: 860px) {
+    padding: 4rem 0 2rem;
+  }
+}
+
