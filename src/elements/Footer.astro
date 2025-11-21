@@ -58,6 +58,17 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
       grid-area: 1 / 2 / 2 / 3;
       gap: 2rem;
     }
+
+    > * {
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    > *:hover {
+      transform: scale(0.97);
+      box-shadow: var(--shadow-drop-lg);
+    }
   }
 
   /** Desktop **/

@@ -9,32 +9,31 @@ body {
   /* Color */
   /*--gray: #fffefc;*/
   --lightpurple: #b183e6;
-  --mediumpurple: #8F4CDA;
+  --mediumpurple: #8f4cda;
   --midnightblue: #3d166a;
   --oldlace: #fff5e7;
   --papayawhip: #ffedd5;
   --sandybrown: #ffb657;
-  --snow: #FCFAFE;
+  --snow: #fcfafe;
 
   /* BorderRadius */
-  
-  --br-12:12px 12px 0 0;
+
+  --br-12: 12px 12px 0 0;
 
   /* FontSize */ /* make responsive to accom bigger screens - use clamp */
-  --h1: 3rem;
-  --h2: 1.5rem;
-  --h3: 1.3rem;
-  --h4: 0.5rem;
-  --h5: 0.5rem;
+  --h1: clamp(2rem, 5vw, 3rem);
+  --h2: clamp(1.2rem, 3vw, 1.5rem);
+  --h3: clamp(1rem, 2.5vw, 1.3rem);
+  --h4: clamp(0.5rem, 2vw, 0.8rem);
+  --h5: clamp(0.5rem, 0.6vw, 0.7rem);
 
   /* Borders */
   --border-1: solid 2px var(--midnightblue);
   border-inline-color: solid 2px var(--midnightblue);
 
   /* Shadows */
-  --shadow-drop: 7px 10px 0px  #3d166a40; /*0px 7px 0px -2px var(--midnightblue)*/;
+  --shadow-drop: 7px 10px 0px #3d166a40; /*0px 7px 0px -2px var(--midnightblue)*/
 }
-
 
 /* Typography */
 
@@ -73,6 +72,8 @@ p {
   line-height: 15px;
   color: var(--midnightblue);
   min-width: 25ch;
+  font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+  line-height: 1.6;
 }
 ul,
 li,
@@ -81,20 +82,20 @@ a {
   list-style: none;
   color: var(--midnightblue);
   text-decoration: none;
-  line-height: 15px;
+  line-height: 1.6;
 }
 
 a:hover {
   color: var(--sandybrown);
 }
 
-figure{
+figure {
   margin: 0;
-  
+
   figcaption {
-  margin: 0;
-  padding: 0;
-}
+    margin: 0;
+    padding: 0;
+  }
 }
 
 #space {
@@ -103,4 +104,3 @@ figure{
     padding: 4rem 0 2rem;
   }
 }
-
