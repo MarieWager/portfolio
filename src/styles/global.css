@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 5vw;
+  line-height: normal;
+  background-color: var(--oldlace);
+}
+
+
+:root {
+  /* Color */
+  /*--gray: #fffefc;*/
+  --lightpurple: #b183e6;
+  --mediumpurple: #8f4cda;
+  --midnightblue: #3d166a;
+  --oldlace: #fff5e7;
+  --papayawhip: #ffedd5;
+  --sandybrown: #ffb657;
+  --snow: #fcfafe;
+
+  /* BorderRadius */
+
+  --br-12: 12px 12px 0 0;
+
+  /* FontSize */
+  --h1: clamp(2rem, 5vw, 3rem);
+  --h2: clamp(1.2rem, 3vw, 1.5rem);
+  --h3: clamp(1rem, 2.5vw, 1.3rem);
+  --h4: clamp(0.6rem, 2vw, 0.8rem);
+  --h5: clamp(0.5rem, 0.6vw, 0.7rem);
+
+  /* Borders */
+  --border-1: solid 2px var(--midnightblue);
+  border-inline-color: solid 2px var(--midnightblue);
+
+  /* Shadows */
+  --shadow-drop: 7px 10px 0px #3d166a40; /*0px 7px 0px -2px var(--midnightblue)*/
+}
+
+/* Typography */
+
+h1 {
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--h1);
+  color: var(--midnightblue);
+  margin: 0;
+  padding: 0;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+h2 {
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--h2);
+  color: var(--midnightblue);
+  font-weight: bold;
+}
+h3 {
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--h3);
+  color: var(--midnightblue);
+  font-weight: bold;
+}
+h4 {
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--h4);
+  color: var(--midnightblue);
+  font-weight: bold;
+}
+h5 {
+  font-family: "Press Start 2P", system-ui;
+  font-size: var(--h5);
+  color: var(--midnightblue);
+  letter-spacing: 5px;
+  margin: 0;
+  font-weight: bold;
+}
+p {
+  font-family: "League Spartan", sans-serif;
+  line-height: 15px;
+  color: var(--midnightblue);
+  min-width: 25ch;
+  font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+  line-height: 1.6;
+}
+ul,
+li,
+a {
+  font-family: "League Spartan", sans-serif;
+  list-style: none;
+  color: var(--midnightblue);
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+a:hover {
+  color: var(--sandybrown);
+}
+
+figure {
+  margin: 0;
+
+  figcaption {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#space {
+  padding: 3rem 0 1rem;
+  @media (min-width: 860px) {
+    padding: 4rem 0 2rem;
+  }
+}

@@ -3,23 +3,24 @@ const { elem1, elem2, elem3 } = Astro.props;
 ---
 
 <header>
-  <div class="search_bar">
+  <section></section>
+  <main class="search_bar">
     <div class="search_icon">
       <img src="/media/search_icon.svg" alt="" />
     </div>
     <nav class="nav">
       <ul>
-        <li><a href=`#${elem1}` aria-label=`Go to ${elem1}`>{elem1}</a></li>
-        <li><a href=`#${elem2}` aria-label=`Go to ${elem2}`>{elem2}</a></li>
-        <li><a href=`#${elem3}` aria-label=`Go to ${elem3}`>{elem3}</a></li>
+        <li><h3><a href=`#${elem1}` aria-label=`Go to ${elem1}`>{elem1}</a></h3></li>
+        <li><h3><a href=`#${elem2}` aria-label=`Go to ${elem2}`>{elem2}</a></h3></li>
+        <li><h3><a href=`#${elem3}` aria-label=`Go to ${elem3}`>{elem3}</a></h3></li>
       </ul>
     </nav>
-  </div>
+  </main>
 </header>
 
 <style>
   /** mobile **/
-  h2 {
+  h3 {
     margin: 0;
   }
 
@@ -31,7 +32,8 @@ const { elem1, elem2, elem3 } = Astro.props;
     z-index: 3000;
     transition: opacity 0.3s ease;
     opacity: 5;
-    background-color: var(--oldlace);
+    background-color: #fff5e7d3;
+    background: var(--oldlace);
     margin-bottom: 0;
   }
 
@@ -82,7 +84,7 @@ const { elem1, elem2, elem3 } = Astro.props;
       padding-right: 8vw;
 
       ul {
-        font-size: var(--h2);
+        font-size: var(--h3);
         align-content: center;
       }
     }

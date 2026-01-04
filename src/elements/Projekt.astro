@@ -1,11 +1,11 @@
 ---
-import ProjektImgCard from "../components/ProjektImgCard.astro";
+import Slide from "./Slide.jsx";
 ---
 
 <section>
-  <ProjektImgCard img="/media/Gif_ToDo.gif" desc="" />
-  <ProjektImgCard img="/media/Gif_Net.gif" desc="" />
-  <ProjektImgCard img="/media/Gif_RKOS.gif" desc="" />
+  <div id="space"><h1>Projekter</h1></div>
+
+  <Slide client:load />
 </section>
 
 <style>
