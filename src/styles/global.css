@@ -36,13 +36,14 @@ body {
 
   /* Borders */
   --border-1: solid 2px var(--midnightblue);
-  border-inline-color: solid 2px var(--midnightblue);
+  --border-inline-color: solid 2px var(--midnightblue);
 
   /* BorderRadius */
   --br-12: 12px 12px 0 0;
 
   /* Shadows */
   --shadow-drop: 7px 10px 0px #3d166a40; /*0px 7px 0px -2px var(--midnightblue)*/
+  --shadow-hover: 3.5px 5px 0px #3d166a40;
 }
 
 /* Typography */
@@ -53,7 +54,6 @@ h1 {
   color: var(--midnightblue);
   margin: 0;
   padding: 0;
-  margin-top: 2rem;
   font-weight: bold;
 }
 h2 {
@@ -116,6 +116,6 @@ figure {
 #space {
   padding: 3rem 0 1rem;
   @media (min-width: 860px) {
-    padding: 4rem 0 2rem;
+    padding: 8vw 0 2rem;
   }
 }

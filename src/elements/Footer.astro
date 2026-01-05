@@ -3,108 +3,135 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
 ---
 
 <article>
-  <div id="space"><h1 class="over">Kontakt mig her</h1></div>
+  <div id="space"></div>
 
-  <div class="sbs">
-    <h1 class="under">Kontakt mig her</h1>
+  <section>
+    <h1>Kontakt mig her</h1>
 
-    <img src="/media/image_me.png" alt="" />
+    <figure>
+      <img src="/media/portrait-transparent.png" loading="lazy" alt="Portrait" />
+    </figure>
 
-    <div class="kontakt">
-      <KontaktInfoCard sted="Email" variant="gul" link="mailto:mariewpj@gmail.com" kontakt="Mariewpj@gmail.com" />
-      <KontaktInfoCard sted="Telefonnummer" variant="lys" link="tel:+4529176648" kontakt="29 17 66 48" />
-      <KontaktInfoCard sted="LinkedIn" variant="lilla" link="https://www.linkedin.com/in/marie-jensen-031603222/" kontakt="in/marie-jensen-031603222/" />
-    </div>
-  </div>
+    <KontaktInfoCard sted="Email" variant="gul" ani="true" link="mailto:mariewpj@gmail.com" kontakt="Mariewpj@gmail.com" />
+    <KontaktInfoCard sted="Telefonnummer" variant="lys" ani="true" link="tel:+4529176648" kontakt="29 17 66 48" />
+    <KontaktInfoCard sted="LinkedIn" variant="lilla" ani="true" link="https://www.linkedin.com/in/marie-jensen-031603222/" kontakt="in/marie-jensen-031603222/" />
+  </section>
 </article>
 
 <style>
   /** Mobile **/
-  .sbs {
+  article {
+    margin-top: 2rem;
+
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    padding-bottom: 5vw;
+    justify-content: center;
 
-    margin-bottom: 1rem;
-  }
-
-  .over {
-    display: none;
-  }
-  .under {
-    display: flex;
-    grid-area: 1 / 1 / 2 / 2;
-    align-content: flex-end;
-    flex-wrap: wrap;
-  }
-
-  img {
-    grid-area: 1 / 2 / 2 / 3;
-    border-radius: var(--br-12);
-    border: var(--border-1);
-    box-shadow: var(--shadow-drop);
-
-    width: clamp(160px, 27vw, 300px);
-  }
-
-  .kontakt {
-    grid-area: 2 / 1 / 5 / 3;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1rem;
-    height: 100px;
-    @media (min-width: 860px) {
-      grid-area: 1 / 2 / 2 / 3;
-      gap: 2rem;
-    }
-
-    > * {
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    > *:hover {
-      transform: scale(0.97);
-      box-shadow: var(--shadow-drop-lg);
-    }
-  }
-
-  /** Desktop **/
-  @media (min-width: 860px) {
-    article {
+    section {
       display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, auto);
+      gap: 1rem;
+      height: fit-content;
 
-      justify-content: center;
-    }
-    .under {
-      display: none;
-    }
-    .over {
-      grid-area: 1 / 1 / 2 / 2;
-      display: block;
-      justify-self: center;
-    }
+      /* elementernes placeringer - mobil */
+      & > *:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 4;
+        align-self: end;
+      } /*h1*/
+      & > *:nth-child(2) {
+        grid-area: 1 / 4 / 2 / 5;
+        place-self: end;
+        aspect-ratio: 1 / 1;
+      } /*img*/
+      & > *:nth-child(3) {
+        grid-area: 2 / 1 / 3 / 5;
+      } /*email*/
+      & > *:nth-child(4) {
+        grid-area: 3 / 1 / 4 / 5;
+      } /*tlf*/
+      & > *:nth-child(5) {
+        grid-area: 4 / 1 / 5 / 5;
+      } /*Linked*/
 
-    .sbs {
-      grid-area: 2 / 1 / 5 / 2;
+      @media (min-width: 550px) {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 2.5vw;
 
+        /* elementernes placeringer - tablet */
+        & > *:nth-child(1) {
+          grid-area: 1 / 1 / 2 / 7;
+          text-align: center;
+        }
+        & > *:nth-child(2) {
+          grid-area: 2 / 1 / 5 / 3;
+        }
+        & > *:nth-child(3) {
+          grid-area: 2 / 3 / 3 / 7;
+        }
+        & > *:nth-child(4) {
+          grid-area: 3 / 3 / 4 / 7;
+        }
+        & > *:nth-child(5) {
+          grid-area: 4 / 3 / 5 / 7;
+        }
+      }
+
+      @media (min-width: 700px) {      
+       
+        /* elementernes placeringer - tablet */
+        & > *:nth-child(1) {
+          grid-area: 1 / 1 / 2 / 7;
+          text-align: center;
+        }
+        & > *:nth-child(2) {
+          grid-area: 2 / 1 / 5 / 3;
+        }
+        & > *:nth-child(3) {
+          grid-area: 2 / 3 / 3 / 7;
+        }
+        & > *:nth-child(4) {
+          grid-area: 3 / 3 / 4 / 7;
+        }
+        & > *:nth-child(5) {
+          grid-area: 4 / 3 / 5 / 7;
+        }
+      }
+ 
+    }
+  }
+
+  figure {
       display: grid;
-      grid-template-columns: 1fr 4fr;
-      grid-template-rows: 1fr;
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
-      gap: 3rem;
+      place-items: center
+      object-fit: cover;
+      overflow: hidden;
+      width: 100%;
+      min-width: 90px;
+      min-height: 90px;
+      height: 100%;
+      aspect-ratio: 1 / 1;
 
-      margin-bottom: 5vw;
-    }
-
+      border-radius: 20px;
+      background-color: var(--snow);
+      box-shadow: var(--shadow-drop);
+      outline: var(--border-1);
+    
     img {
-      grid-area: 1 / 1 / 2 / 2;
-      width: clamp(160px, 35vw, 300px);
+      width: 100%;
+      min-width: 90px;
+      min-height: 90px;
+      height: 100%;
+      overflow: hidden;
+      object-fit: cover;
+      border-radius: 20px;
+      background-color: var(--snow);
+      transform: scale(150%, 150%) translateY(-3%);
+       @media (min-width: 550px) {   
+        transform: scale(130%, 130%) translateY(-3%);
+        }
     }
   }
+  
 </style>

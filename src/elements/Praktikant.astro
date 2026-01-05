@@ -19,19 +19,15 @@ import DescCard from "../components/DescCard.astro";
 
 </article>
 
-  <style>
+<style>
     /** mobile **/
-    .desk {
-      display: none;
-    }
-    .mobile {
-      display: block;
-    }
     h1 {
       justify-self: center;
     }
 
 article {
+  margin-top: 2rem;
+
   display: grid;
   grid-template-columns: 1fr;
 
@@ -41,7 +37,6 @@ article {
     grid-template-rows: repeat(4, auto);
     gap: 1rem;
     height: fit-content;
-
 
     /* elementernes placeringer - mobil */
     & > *:nth-child(1) { grid-area: 1 / 1 / 2 / 4; } /*navn*/
@@ -91,8 +86,6 @@ article {
       background-color: var(--snow);
       box-shadow: var(--shadow-drop);
       outline: var(--border-1);
-       @media (min-width: 1000px) {
-        }
       img {
         background-color: var(--snow);
         border-radius: var(--br-12);
@@ -100,11 +93,9 @@ article {
         height: 100%;
         object-fit: cover;
         transform: scale(150%, 150%) translateY(5.3%);
-          @media (min-width: 1100px) {
-          }
       }
        
-      }
+  }
 
   </style>
 

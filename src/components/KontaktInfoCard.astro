@@ -1,33 +1,64 @@
 ---
-const { sted, variant, link, kontakt } = Astro.props;
+const { sted, variant, link, kontakt, ani } = Astro.props;
 ---
 
-<article class={variant}>
-  <h5>{sted}</h5>
+<div class={ani}>
+  <article class={variant}>
+    <h5>{sted}</h5>
 
-  <a href=`${link}` aria-label=`Går til ${sted}`><h3>{kontakt}</h3></a>
-</article>
+    <a href={link} aria-label={`Går til ${sted}`}>
+      <h3>{kontakt}</h3>
+    </a>
+  </article>
+</div>
 
 <style>
-  h5,
-  h3 {
-    margin: 0;
-  }
-  article {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    padding: 20px;
+  div {
     border-radius: 20px;
-    box-shadow: var(--shadow-drop);
+    width: 100%;
+    height: 100%;
+
+    article {
+      display: grid;
+      grid-template-rows: 0.5fr auto 0.5fr;
+      box-shadow: var(--shadow-drop);
+
+      gap: none;
+      padding: 20px;
+      
+      width: 100%;
+      height: 100%;
+      min-width: 90px;
+      min-height: 90px;
+      h5,
+      h3 {
+        margin: 0;
+      }
+      a {
+        display: block;
+        text-align: right;
+        cursor: pointer;
+        align-self: center;
+      }
+    }
   }
 
-  a {
-    display: block;
-    text-align: right;
-    cursor: pointer;
+  .true {
+    min-width: 90px;
+    min-height: 90px;
+
+    > * {
+      transition:
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.3s ease;
+    }
+
+    > *:hover {
+      transform: scale(0.97);
+      box-shadow: var(--shadow-hover);
+    }
   }
+
   .gul {
     background-color: var(--sandybrown);
   }
@@ -38,5 +69,13 @@ const { sted, variant, link, kontakt } = Astro.props;
 
   .lilla {
     background-color: var(--mediumpurple);
+  }
+
+  .gul,
+  .lys,
+  .lilla {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
   }
 </style>

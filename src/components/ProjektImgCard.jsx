@@ -4,7 +4,7 @@ import { motion, useMotionValue, AnimatePresence } from "motion/react";
 export default function ProjektImgCard({ img, desc, text }) {
   const containerRef = useRef(null);
   const progress = useMotionValue(0);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -25,28 +25,45 @@ export default function ProjektImgCard({ img, desc, text }) {
 
   return (
     <article className="w-full max-w-[360px] relative">
-      <section
-        ref={containerRef}
-        className={`relative aspect-[7/8] xs:aspect-[9/11] rounded-xl shadow-[var(--shadow-drop)] scrollbar-hidden ${isOpen ? "overflow-y-hidden" : "overflow-y-auto"}`}
-        style={{
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
+      <motion.section //
+        className="mb-4 shadow-[var(--shadow-drop)] rounded-xl cursor-pointer "
+        whileHover={{ scale: 0.99, boxShadow: "var(--shadow-hover)", marginBottom: "none" }}
+        transition={{
+          scale: { type: "spring", stiffness: 120, damping: 20, mass: 1.2 },
+          boxShadow: { type: "tween", duration: 0.3, ease: "easeInOut" },
         }}
-        onClick={() => setIsOpen(true)}
       >
-        <img src={img} alt={desc} className="w-full h-auto object-cover rounded-xl block" />
-      </section>
+        <section
+          ref={containerRef}
+          className={`relative aspect-[7/8] xs:aspect-[9/11] rounded-xl cursor-pointer scrollbar-hidden ${isOpen ? "overflow-y-hidden" : "overflow-y-auto"}`}
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+          onClick={() => setIsOpen(true)}
+        >
+          <img src={img} alt={desc} className="w-full h-auto object-cover rounded-xl block" />
+        </section>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div initial={{ opacity: 0, y: "1%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "1%" }} transition={{ duration: 0.4, ease: "easeInOut" }} className="absolute top-0 left-0 w-full h-fit aspect-[7/8] xs:aspect-[9/11] bg-[var(--darknight)] p-5 pb-0 grid grid-cols-1 grid-rows-[auto_1fr] gap-[2.5vw] justify-items-start rounded-xl z-20 font-(family-name:--Sparten) cursor-pointer" onClick={() => setIsOpen(false)}>
-            <h6 className="text-left text-(length:--h3) leading-snug font-bold text-[var(--snow)]">{desc}</h6> {/*flex flex-col justify-evenly gap-[2.5vw]*/}
-            <span className="justify-self-start place-self-start  leading-[1.6] xs:leading-snug sm:leading-[1.6] font-light text-(length:--text) text-[var(--snow)]">{text}</span>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: "1%" }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: "1%" }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              //
+              className="absolute top-0 left-0 w-full h-fit aspect-[7/8] xs:aspect-[9/11] bg-[var(--darknight)] p-5 pb-0 grid grid-cols-1 grid-rows-[auto_1fr] gap-[2.5vw] justify-items-start rounded-xl z-20 font-(family-name:--Sparten) cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            >
+              <h6 className="text-left text-(length:--h3) leading-snug font-bold text-[var(--snow)]">{desc}</h6> {/*flex flex-col justify-evenly gap-[2.5vw]*/}
+              <span className="leading-[1.6] xs:leading-snug sm:leading-[1.6] font-light text-(length:--text) text-[var(--snow)]">{text}</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.section>
 
-      <motion.div style={{ scaleX: progress, transformOrigin: "0 50%" }} className="h-2 bg-[var(--sandybrown)] mb-4 mx-2 rounded-full translate-y-4" />
+      <motion.div style={{ scaleX: progress, transformOrigin: "0 50%" }} className="h-2 bg-[var(--sandybrown)] mt-2 mx-2 rounded-full" />
     </article>
   );
 }
