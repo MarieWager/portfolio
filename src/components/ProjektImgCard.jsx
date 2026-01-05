@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from "react";
-import { motion, useMotionValue } from "motion/react";
+import { useRef, useEffect, useState } from "react";
+import { motion, useMotionValue, AnimatePresence } from "motion/react";
 
-export default function ProjektImgCard({ img, desc }) {
+export default function ProjektImgCard({ img, desc, text }) {
   const containerRef = useRef(null);
   const progress = useMotionValue(0);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -23,18 +24,29 @@ export default function ProjektImgCard({ img, desc }) {
   }, [progress]);
 
   return (
-    <article className="w-full rounded-xl">
+    <article className="w-full max-w-[360px] relative">
       <section
         ref={containerRef}
-        className="relative w-full aspect-square overflow-y-auto rounded-xl shadow-[var(--shadow-drop)] scrollbar-hidden"
+        className={`relative aspect-[7/8] xs:aspect-[9/11] rounded-xl shadow-[var(--shadow-drop)] scrollbar-hidden ${isOpen ? "overflow-y-hidden" : "overflow-y-auto"}`}
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
+        onClick={() => setIsOpen(true)}
       >
         <img src={img} alt={desc} className="w-full h-auto object-cover rounded-xl block" />
       </section>
-      <motion.div style={{ scaleX: progress, transformOrigin: "0 50%" }} className="h-2 bg-[var(--sandybrown)] m-2 rounded-full translate-y-3" />
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div initial={{ opacity: 0, y: "1%" }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: "1%" }} transition={{ duration: 0.4, ease: "easeInOut" }} className="absolute top-0 left-0 w-full h-fit aspect-[7/8] xs:aspect-[9/11] bg-[var(--darknight)] p-5 pb-0 grid grid-cols-1 grid-rows-[auto_1fr] gap-[2.5vw] justify-items-start rounded-xl z-20 font-(family-name:--Sparten) cursor-pointer" onClick={() => setIsOpen(false)}>
+            <h6 className="text-left text-(length:--h3) leading-snug font-bold text-[var(--snow)]">{desc}</h6> {/*flex flex-col justify-evenly gap-[2.5vw]*/}
+            <span className="justify-self-start place-self-start  leading-[1.6] xs:leading-snug sm:leading-[1.6] font-light text-(length:--text) text-[var(--snow)]">{text}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.div style={{ scaleX: progress, transformOrigin: "0 50%" }} className="h-2 bg-[var(--sandybrown)] mb-4 mx-2 rounded-full translate-y-4" />
     </article>
   );
 }

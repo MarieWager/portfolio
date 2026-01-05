@@ -7,21 +7,20 @@ body {
   background-color: var(--oldlace);
 }
 
-
 :root {
   /* Color */
   /*--gray: #fffefc;*/
   --lightpurple: #b183e6;
   --mediumpurple: #8f4cda;
   --midnightblue: #3d166a;
+  --darknight: #220c3be0;
   --oldlace: #fff5e7;
   --papayawhip: #ffedd5;
   --sandybrown: #ffb657;
   --snow: #fcfafe;
 
-  /* BorderRadius */
-
-  --br-12: 12px 12px 0 0;
+  /* FontFamily */
+  --Sparten: "League Spartan", sans-serif;
 
   /* FontSize */
   --h1: clamp(2rem, 5vw, 3rem);
@@ -29,10 +28,18 @@ body {
   --h3: clamp(1rem, 2.5vw, 1.3rem);
   --h4: clamp(0.6rem, 2vw, 0.8rem);
   --h5: clamp(0.5rem, 0.6vw, 0.7rem);
+  --text: clamp(0.9rem, 1.4vw, 1.2rem);
+
+  /* LineHeight */
+  --lineSnug: 1.375;
+  --lineRelax: 1.6;
 
   /* Borders */
   --border-1: solid 2px var(--midnightblue);
   border-inline-color: solid 2px var(--midnightblue);
+
+  /* BorderRadius */
+  --br-12: 12px 12px 0 0;
 
   /* Shadows */
   --shadow-drop: 7px 10px 0px #3d166a40; /*0px 7px 0px -2px var(--midnightblue)*/
@@ -41,7 +48,7 @@ body {
 /* Typography */
 
 h1 {
-  font-family: "League Spartan", sans-serif;
+  font-family: var(----Sparten);
   font-size: var(--h1);
   color: var(--midnightblue);
   margin: 0;
@@ -50,19 +57,19 @@ h1 {
   font-weight: bold;
 }
 h2 {
-  font-family: "League Spartan", sans-serif;
+  font-family: var(----Sparten);
   font-size: var(--h2);
   color: var(--midnightblue);
   font-weight: bold;
 }
 h3 {
-  font-family: "League Spartan", sans-serif;
+  font-family: var(----Sparten);
   font-size: var(--h3);
   color: var(--midnightblue);
   font-weight: bold;
 }
 h4 {
-  font-family: "League Spartan", sans-serif;
+  font-family: var(----Sparten);
   font-size: var(--h4);
   color: var(--midnightblue);
   font-weight: bold;
@@ -76,20 +83,20 @@ h5 {
   font-weight: bold;
 }
 p {
-  font-family: "League Spartan", sans-serif;
-  line-height: 15px;
+  font-family: var(----Sparten);
   color: var(--midnightblue);
   min-width: 25ch;
-  font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+  font-size: var(--text);
   line-height: 1.6;
 }
 ul,
 li,
 a {
-  font-family: "League Spartan", sans-serif;
+  font-family: var(----Sparten);
   list-style: none;
   color: var(--midnightblue);
   text-decoration: none;
+  font-size: var(--text);
   line-height: 1.6;
 }
 
