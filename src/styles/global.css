@@ -2,9 +2,12 @@
 
 body {
   margin: 0;
-  padding: 5vw;
+/*  padding: 0 5vw 8vw 5vw; */
   line-height: normal;
   background-color: var(--oldlace);
+ /* @media (min-width: 1100px) {
+    padding: 12vw 8vw 8vw 8vw;
+  }*/
 }
 
 :root {
@@ -81,6 +84,8 @@ h5 {
   letter-spacing: 5px;
   margin: 0;
   font-weight: bold;
+  line-height: 1.375;
+
 }
 p {
   font-family: var(----Sparten);
@@ -90,8 +95,7 @@ p {
   line-height: 1.6;
 }
 ul,
-li,
-a {
+li {
   font-family: var(----Sparten);
   list-style: none;
   color: var(--midnightblue);
@@ -113,9 +117,17 @@ figure {
   }
 }
 
+/*
 #space {
-  padding: 12vw 0 1rem;
-  @media (min-width: 860px) {
-    padding: 8vw 0 2rem;
+    height: 22vw;
+
+  @media (min-width: 700px) {
+    height: 22vw;
+  }
+
+  @media (min-width: 1000px) {
+    height: 22vw;
   }
 }
+
+*/

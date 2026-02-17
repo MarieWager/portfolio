@@ -4,15 +4,12 @@
 
 <article class="profil">
   <h5>Profil</h5>
-  <br />
   <h3>Hvem er jeg?</h3>
-  <p>
-    Kreativ, nysgerrig og engageret.
-    <br />
-    Jeg er en positiv og åben person, som værdsætter samarbejde, fællesskab og gode relationer. Nye opgaver og udfordringer mødes med høj energi og et smil, og problemløsning struktureret og detaljeorienteret.
-    <br />
-    Jeg vil lære, så jeg kan bidrage.
-  </p>
+  <div class="text">
+    <p>Kreativ, nysgerrig og engageret.</p>
+    <p>Jeg er en positiv og åben person, som værdsætter samarbejde, fællesskab og gode relationer. Nye opgaver og udfordringer mødes med høj energi og et smil, og problemløsning struktureret og detaljeorienteret.</p>
+    <p>Jeg vil lære, så jeg kan bidrage.</p>
+  </div>
 </article>
 
 <style>
@@ -23,10 +20,23 @@
     background-color: var(--snow);
     box-shadow: var(--shadow-drop);
     word-break: normal;
+
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 0.2em;
+
+    .text {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 0.2em;
+    }
   }
 
-  /** desktop **/
+  /*
 
-  @media (min-width: 860px) {
+ @media (min-width: 860px) {
   }
+
+*/
 </style>

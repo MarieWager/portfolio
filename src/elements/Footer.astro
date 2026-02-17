@@ -3,8 +3,7 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
 ---
 
 <article>
-  <div id="space"></div>
-
+  
   <section>
     <h1>Kontakt mig her</h1>
 
@@ -16,16 +15,13 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
     <KontaktInfoCard sted="Telefonnummer" variant="lys" ani="true" link="tel:+4529176648" kontakt="29 17 66 48" />
     <KontaktInfoCard sted="LinkedIn" variant="lilla" ani="true" link="https://www.linkedin.com/in/marie-jensen-031603222/" kontakt="in/marie-jensen-031603222/" />
   </section>
+
 </article>
 
 <style>
-  /** Mobile **/
   article {
-    margin-top: 2rem;
-
     display: grid;
     grid-template-columns: 1fr;
-    padding-bottom: 5vw;
     justify-content: center;
 
     section {
@@ -34,6 +30,7 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
       grid-template-rows: repeat(4, auto);
       gap: 1rem;
       height: fit-content;
+      width: fit-content;
 
       /* elementernes placeringer - mobil */
       & > *:nth-child(1) {
@@ -56,29 +53,29 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
       } /*Linked*/
 
       @media (min-width: 550px) {
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-        gap: 2.5vw;
+       grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
 
         /* elementernes placeringer - tablet */
         & > *:nth-child(1) {
-          grid-area: 1 / 1 / 2 / 7;
+          grid-area: 1 / 1 / 2 / 5;
           text-align: center;
         }
         & > *:nth-child(2) {
           grid-area: 2 / 1 / 5 / 3;
         }
         & > *:nth-child(3) {
-          grid-area: 2 / 3 / 3 / 7;
+          grid-area: 2 / 3 / 3 / 5;
         }
         & > *:nth-child(4) {
-          grid-area: 3 / 3 / 4 / 7;
+          grid-area: 3 / 3 / 4 / 5;
         }
         & > *:nth-child(5) {
-          grid-area: 4 / 3 / 5 / 7;
+          grid-area: 4 / 3 / 5 / 5;
         }
       }
 
-      @media (min-width: 700px) {      
+      @media (min-width: 700px) {   
+        gap: 2.5vw; 
        
         /* elementernes placeringer - tablet */
         & > *:nth-child(1) {
@@ -129,7 +126,10 @@ import KontaktInfoCard from "../components/KontaktInfoCard.astro";
       background-color: var(--snow);
       transform: scale(150%, 150%) translateY(-3%);
        @media (min-width: 550px) {   
-        transform: scale(130%, 130%) translateY(-3%);
+        transform: 
+        scale(130%, 130%) 
+        translateY(-3%) 
+        translateX(-2.5%);
         }
     }
   }

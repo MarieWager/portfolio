@@ -3,7 +3,6 @@ const { elem1, elem2, elem3 } = Astro.props;
 ---
 
 <header>
-  <section></section>
   <main class="search_bar">
     <div class="search_icon">
       <img src="/media/search_icon.svg" alt="" />
@@ -22,12 +21,15 @@ const { elem1, elem2, elem3 } = Astro.props;
   /** mobile **/
   h3 {
     margin: 0;
+    font-size: var(--text);
+    @media (min-width: 430px) {
+      font-size: var(--h3);
+    }
   }
 
   header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     z-index: 3000;
     transition: opacity 0.3s ease;
@@ -35,10 +37,6 @@ const { elem1, elem2, elem3 } = Astro.props;
     background-color: #fff5e7d3;
     background: var(--oldlace);
     margin-bottom: 0;
-  }
-
-  header.scrolled {
-    opacity: 0.95;
   }
 
   .search_bar {
@@ -50,7 +48,10 @@ const { elem1, elem2, elem3 } = Astro.props;
     margin: 3vw 5vw 0 5vw;
     display: grid;
     grid-template-columns: 1fr 5fr;
-    max-height: 45wv;
+    max-height: 45vw;
+    @media (min-width: 1200px) {
+      margin: 5vw 8vw 0 8vw;
+    }
   }
 
   .search_icon {
@@ -71,7 +72,6 @@ const { elem1, elem2, elem3 } = Astro.props;
   nav {
     align-self: center;
     ul {
-      font-size: var(--h3);
       padding: 0;
       display: flex;
       justify-content: space-evenly;
@@ -88,7 +88,6 @@ const { elem1, elem2, elem3 } = Astro.props;
       padding-right: 8vw;
 
       ul {
-        font-size: var(--h3);
         align-content: center;
       }
     }

@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useMotionValue, AnimatePresence } from "motion/react";
 
-export default function ProjektImgCard({ img, desc, text }) {
+export default function ProjektImgCard({ img, desc, text, link }) {
   const containerRef = useRef(null);
   const progress = useMotionValue(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -24,9 +24,12 @@ export default function ProjektImgCard({ img, desc, text }) {
   }, [progress]);
 
   return (
-    <article className="w-full max-w-[360px] relative">
+    <article className="w-full relative">
       <motion.section //
-        className="mb-4 shadow-[var(--shadow-drop)] rounded-xl cursor-pointer "
+        className="  
+        left-0
+        top-0
+        mb-4 shadow-[var(--shadow-drop)] rounded-xl cursor-pointer"
         whileHover={{ scale: 0.99, boxShadow: "var(--shadow-hover)", marginBottom: "none" }}
         transition={{
           scale: { type: "spring", stiffness: 120, damping: 20, mass: 1.2 },
@@ -53,11 +56,32 @@ export default function ProjektImgCard({ img, desc, text }) {
               exit={{ opacity: 0, y: "1%" }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               //
-              className="absolute top-0 left-0 w-full h-fit aspect-[7/8] xs:aspect-[9/11] bg-[var(--darknight)] p-5 pb-0 grid grid-cols-1 grid-rows-[auto_1fr] gap-[2.5vw] justify-items-start rounded-xl z-20 font-(family-name:--Sparten) cursor-pointer"
+              className="
+              absolute left-0 top-0
+              aspect-[7/8] xs:aspect-[9/11] 
+              bg-[var(--darknight)] p-5
+              grid grid-cols-1 grid-rows-[auto_1fr_auto] gap-5 sm:gap-3 ml:gap-[2.5vw]
+              justify-items-start rounded-xl z-20 
+              font-(family-name:--Sparten) cursor-pointer"
               onClick={() => setIsOpen(false)}
             >
               <h6 className="text-left text-(length:--h3) leading-snug font-bold text-[var(--snow)]">{desc}</h6> {/*flex flex-col justify-evenly gap-[2.5vw]*/}
               <span className="leading-[1.6] xs:leading-snug sm:leading-[1.6] font-light text-(length:--text) text-[var(--snow)]">{text}</span>
+              <button className="row-start-end place-self-end z-50">
+                <a href={link} aria-label={`Går til ${desc}`}>
+                  <h6
+                    className="
+                  rounded-xl cursor-pointer px-4 py-2
+                  border-[2px] border-[var(--snow)]
+                  hover:border-[var(--lightpurple)]
+                  text-[var(--snow)]
+                  hover:text-[var(--lightpurple)]
+                  transition-colors duration-300 ease-in-out"
+                  >
+                    Besøg
+                  </h6>
+                </a>
+              </button>
             </motion.div>
           )}
         </AnimatePresence>

@@ -1,28 +1,55 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
+import Menu from "../elements/Menu.astro";
 import Praktikant from "../elements/Praktikant.astro";
-import Projekt from "../elements/Projekt.astro";
+import Overview from "../elements/Overview.astro";
 import Footer from "../elements/Footer.astro";
+import Projekter from "../elements/Projekter.jsx";
 ---
 
 <Layout title="Marie Jensen" meta="Velkommen til mit digitale portfolio">
-  <section id="Praktikanten">
-    <div id="space"></div>
-    <Praktikant />
-  </section>
-  <div id="space"></div>
-  <section id="Projekter">
-    <Projekt />
-  </section>
-  <section id="Kontakt">
-    <div id="space"></div>
-    <Footer />
-  </section>
+  <article>
+    <div class="space"></div>
+
+    <section id="Praktikanten">
+      <Praktikant />
+    </section>
+    <section id="Projekter">
+      <Projekter client:load />
+    </section>
+    <section id="Kontakt">
+      <Footer />
+    </section>
+  </article>
 </Layout>
 
 <style>
-  #space {
-    padding: 2vh;
+  article {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: clamp(124px, 18vw, 12vw);
+
+    padding: 0 5vw 10vw 5vw;
+    @media (min-width: 1200px) {
+      padding: 0 8vw 10vw 8vw;
+    }
+  }
+
+  .space {
+    display: block;
+    margin: 3vw 5vw 0 5vw;
+    /*
+    min-height: clamp(30px, 18vw, 90px);*/
+    @media (min-width: 1100px) {
+      margin: 5vw 8vw 0 8vw;
+    }
+  }
+
+  #Praktikanten,
+  #Projekter,
+  #Kontakt {
+    scroll-margin-top: clamp(124px, 14vw, 18vw);
   }
 </style>

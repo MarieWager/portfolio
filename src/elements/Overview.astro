@@ -1,0 +1,33 @@
+---
+import Projekter from "./Projekter.jsx";
+---
+
+<article id="Projekter">
+  <div id="space"></div>
+
+  <section>
+    <Projekter client:load />
+  </section>
+</article>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    height: fit-content;
+    width: fit-content;
+    @media (min-width: 700px) {
+      gap: 2.5vw;
+    }
+  }
+
+  h1 {
+    justify-self: left;
+    @media (min-width: 370px) {
+      justify-self: center;
+      text-align: center;
+    }
+  }
+</style>
